@@ -9,7 +9,7 @@ policy {
 
 provider_policy "aws" "approved_source" {
   enforce {
-    condition     = core::endswith(meta.source, "/hashicorp/aws")
+    condition     = meta.source == "registry.terraform.io/hashicorp/aws"
     error_message = "Provider source '${meta.source}' not approved."
   }
 }
